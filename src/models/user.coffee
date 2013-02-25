@@ -17,8 +17,11 @@ class module.exports.User extends Model
         return ue
 
 class module.exports.UserEntity extends Model
-  index: (fn) => fn false, "user(#{@login})"
+  index: (fn) => @request "user/#{@login}", fn
 
-  #https://intra.epitech.bigint.fr/intra/user/touron_m/binome?format=json
-  binome: (fn) => fn false, "user(#{@login}).binome"
+  # https://intra.epitech.bigint.fr/intra/user/touron_m/binome?format=json
+  # "user(#{@login}).binome"
+  binome: (fn) => @request "user/#{@login}/binome", (err, result) ->
+    return fn err, result if err
+    return fn err, result, result.binomes
 

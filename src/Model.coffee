@@ -3,7 +3,13 @@ class module.exports.Model
     @globalRoutes = {}
     @localRoutes =  {}
 
-  setupRoutes: =>
+  setupRoutes: => # placeholder
+
+  debug: (args...) -> console.log args...
+
+  request: (path, fn) =>
+    @debug "Calling #{path}"
+    @client.request path, fn
 
   attach: =>
     @client.__defineGetter__ k, (-> v) for k, v of @globalRoutes
