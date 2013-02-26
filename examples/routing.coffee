@@ -25,6 +25,8 @@ paths = [
   "client.planning.calendar"
   "client.planning(2)"
   "client.planning(2).events"
+  "client.group('Paris')"
+  "client.group('Paris').index"
   #"client.planning(2)(754)"
   ]
 
