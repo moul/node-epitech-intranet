@@ -10,7 +10,7 @@
     verbose: true
   });
 
-  client.user('touron_m').binome(function(err, data, binomes) {
+  client.user('touron_m').binome(function(err, binomes, result) {
     var binome;
     if (err) {
       return console.log(err, data, binomes);
