@@ -20,6 +20,9 @@ paths = [
   "client.user('touron_m').notification.coming"
   "client.user('touron_m').notification.message"
   "client.user('touron_m').notification.alert"
+  "client.planning"
+  "client.planning.load"
+  "client.planning.calendar"
   ]
 
 for _path in paths

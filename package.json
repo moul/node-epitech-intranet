@@ -1,6 +1,6 @@
 {
   "name": "epitech-intranet",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "epitech intranet wrapper",
   "main": "index.js",
   "directories": {
