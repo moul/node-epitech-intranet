@@ -1,4 +1,5 @@
 models = require './models'
+qs =     require 'querystring'
 
 class module.exports.Client
   constructor: (@opts = {}) ->
@@ -55,15 +56,19 @@ class module.exports.Client
     fn false, json
 
   fetchRequest: (args = {}, fn) =>
-    fullPath = "#{@opts.path}#{args.path}?format=json"
-    @debug "Fullpath: #{fullPath}"
+    fullPath = "#{@opts.path}#{args.path}"
+    args['format'] ?= 'json'
+    delete args.path
+    query = qs.stringify args
+    fullPathWithQuery = "#{fullPath}?#{query}"
     reqOpts =
       host:   @opts.hostname
       port:   @opts.port
       method: args.method || 'GET'
-      path:   fullPath
+      path:   fullPathWithQuery
       headers:
         Host: @opts.hostname
+    @debug "fullpath: #{fullPath}, fullPathWithQuery: #{fullPathWithQuery}"
     req = @http.request reqOpts
     req.on 'error', (err) -> fn err, {}
     req.end()

@@ -3,9 +3,15 @@
 class module.exports.User extends Model
   setupRoutes: =>
     @globalRoutes['user'] = @router
-    @router.index = @index
+    @router.index =    @index
+    @router.filter =   @filter
+    @router.complete = @complete
 
   index: (fn) => @request "user/", fn
+
+  complete: (args = {}, fn) =>
+    args.path = "user/complete/"
+    @request args, fn
 
   router: (fn = null) =>
     switch typeof(fn)
