@@ -23,6 +23,9 @@ paths = [
   "client.planning"
   "client.planning.load"
   "client.planning.calendar"
+  "client.planning(2)"
+  "client.planning(2).events"
+  #"client.planning(2)(754)"
   ]
 
 for _path in paths

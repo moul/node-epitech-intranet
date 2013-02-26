@@ -10,7 +10,7 @@
     verbose: false
   });
 
-  paths = ["client", "client.index", "client.user", "client.user.index", "client.user('touron_m')", "client.user('touron_m').index", "client.user('touron_m').binome", "client.user('touron_m').netsoul", "client.user('touron_m').netsoul.getlog", "client.user('touron_m').notification", "client.user('touron_m').notification.coming", "client.user('touron_m').notification.message", "client.user('touron_m').notification.alert", "client.planning", "client.planning.load", "client.planning.calendar"];
+  paths = ["client", "client.index", "client.user", "client.user.index", "client.user('touron_m')", "client.user('touron_m').index", "client.user('touron_m').binome", "client.user('touron_m').netsoul", "client.user('touron_m').netsoul.getlog", "client.user('touron_m').notification", "client.user('touron_m').notification.coming", "client.user('touron_m').notification.message", "client.user('touron_m').notification.alert", "client.planning", "client.planning.load", "client.planning.calendar", "client.planning(2)", "client.planning(2).events"];
 
   _fn = function() {
     var obj, path;
