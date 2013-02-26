@@ -16,6 +16,10 @@ paths = [
   "client.user('touron_m').binome"
   "client.user('touron_m').netsoul"
   "client.user('touron_m').netsoul.getlog"
+  "client.user('touron_m').notification"
+  "client.user('touron_m').notification.coming"
+  "client.user('touron_m').notification.message"
+  "client.user('touron_m').notification.alert"
   ]
 
 for _path in paths

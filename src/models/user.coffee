@@ -18,15 +18,18 @@ class module.exports.User extends Model
 
 class module.exports.UserEntity extends Model
   setupRoutes: =>
-    @netsoul = {}
-    @netsoul.getlog = @netsoul_getlog
+    @netsoul =
+      getlog:  @netsoul_getlog
+    @notification =
+      coming:  @notification_coming
+      message: @notification_message
+      alert:   @notification_alert
 
-  netsoul_getlog: (fn) => @request "user/#{@login}/netsoul/getlog/", fn
-
-  index: (fn) => @request "user/#{@login}/", fn
-
-  # https://intra.epitech.bigint.fr/intra/user/touron_m/binome?format=json
-  # "user(#{@login}).binome"
-  binome: (fn) => @request "user/#{@login}/binome", (err, result) ->
+  netsoul_getlog: (fn) =>       @request "user/#{@login}/netsoul/getlog/", fn
+  notification_coming: (fn) =>  @request "user/#{@login}/notification/coming/", fn
+  notification_message: (fn) => @request "user/#{@login}/notification/message/", fn
+  notification_alert: (fn) =>   @request "user/#{@login}/notification/alert/", fn
+  index: (fn) =>                @request "user/#{@login}/", fn
+  binome: (fn) =>               @request "user/#{@login}/binome", (err, result) ->
     return fn err, result if err
     return fn err, result, result.binomes
