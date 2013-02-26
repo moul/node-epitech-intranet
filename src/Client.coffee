@@ -68,13 +68,13 @@ class module.exports.Client
     req.on 'error', (err) -> fn err, {}
     req.end()
     req.on 'response', (response) ->
-      if response.statusCode != 200
-        return fn {"code": "BADSTATUSCODE", "message": response.statusCode}, {}
       buffer = ''
-      response.on 'data', (chunk) ->
-        buffer += chunk
+      response.on 'data', (chunk) -> buffer += chunk
       response.on 'end', ->
-        fn null, buffer if fn
+        switch response.statusCode
+          when 401 then fn {"code": "AUTH REQUIRED"}, buffer
+          when 200 then fn null, buffer if fn
+          else          fn {"code": "BADSTATUSCODE", "message": response.statusCode}, buffer
 
   request: (args = {}, fn) =>
     if typeof(args) is 'string'

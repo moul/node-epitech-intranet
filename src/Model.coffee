@@ -5,7 +5,8 @@ class module.exports.Model
 
   setupRoutes: => # placeholder
 
-  debug: (args...) -> console.log args...
+  debug: (args...) ->
+    console.log args... if @client.opts.verbose
 
   request: (path, fn) =>
     @debug "Calling #{path}"

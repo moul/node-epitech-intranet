@@ -4,7 +4,7 @@ process.stdout.write '\u001B[2J\u001B[0;0f'
 {Client} = require '..'
 
 client = new Client
-  verbose: true
+  verbose: false
 
 paths = [
   "client"
@@ -14,11 +14,17 @@ paths = [
   "client.user('touron_m')"
   "client.user('touron_m').index"
   "client.user('touron_m').binome"
+  "client.user('touron_m').netsoul"
+  "client.user('touron_m').netsoul.getlog"
   ]
 
-for path in paths
-  obj = eval path
-  if typeof(obj) is 'function'
-    obj (err, data) -> console.log "[+] path=#{path}, err=#{err}, data=#{data}"
-  else
-    console.error "[-] path=#{path} is not a function"
+for _path in paths
+  do ->
+    path = _path
+    obj = eval path
+    if typeof(obj) is 'function'
+      obj (err, data) ->
+        data = unless client.opts.verbose then "data.length=#{data.length}" else unless err then "data=#{data}" else data
+        console.log "[+] path=#{path}, err=", err, data
+    else
+      console.error "[-] path=#{path} is not a function"
