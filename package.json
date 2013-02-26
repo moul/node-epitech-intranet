@@ -1,6 +1,6 @@
 {
   "name": "epitech-intranet",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "epitech intranet wrapper",
   "main": "index.js",
   "directories": {
@@ -20,8 +20,12 @@
   },
   "keywords": [
     "epitech",
+    "epita",
     "intranet",
-    "ionis"
+    "ionis",
+    "netsoul",
+    "bocal",
+    "iit"
   ],
   "author": "Manfred Touron <m@42.am>",
   "license": "MIT",
