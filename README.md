@@ -29,3 +29,4 @@ Ideas
 - Statistics
 - New markes watcher
 - New susies RSS / watcher
+- Forum watcher
