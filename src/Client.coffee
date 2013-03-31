@@ -10,7 +10,7 @@ class module.exports.Client
 
   defaultOptions: =>
     @opts.login ?= ''
-    @opts.url   ?= 'https://intra.epitech.bigint.fr/intra/'
+    @opts.url   ?= 'https://intra.epitech.eu/'
 
   parseOptions: =>
     if @opts.url?
