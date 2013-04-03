@@ -1,6 +1,6 @@
 fs = require 'fs'
 
-models = ['_index', 'user', 'planning', 'group']
+models = ['_index', 'user', 'planning', 'group', 'module']
 
 module.exports = []
 for model in models

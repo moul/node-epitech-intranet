@@ -27,6 +27,9 @@ paths = [
   "client.planning(2).events"
   "client.group('Paris')"
   "client.group('Paris').index"
+  "client.module(2012)"
+  "client.module(2012)('B-WEB-275')"
+  "client.module(2012)('B-CUI-150')('NAN-2-1')"
   #"client.planning(2)(754)"
   ]
 
