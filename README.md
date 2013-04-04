@@ -21,3 +21,12 @@ License
 By Manfred Touron
 
 License MIT
+
+Ideas
+=====
+
+- Event Streamer (socket.io proxy with caching)
+- Statistics
+- New markes watcher
+- New susies RSS / watcher
+- Forum watcher
