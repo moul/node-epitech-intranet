@@ -28,8 +28,11 @@ paths = [
   "client.group('Paris')"
   "client.group('Paris').index"
   "client.module(2012)"
-  "client.module(2012)('B-WEB-275')"
-  "client.module(2012)('B-CUI-150')('NAN-2-1')"
+  "client.module(2012).index"
+  #"client.module(2012)('B-WEB-275')"
+  #"client.module(2012)('B-WEB-275').index"
+  #"client.module(2012)('B-CUI-150')('NAN-2-1')"
+  #"client.module(2012)('B-CUI-150')('NAN-2-1').index"
   #"client.planning(2)(754)"
   ]
 
@@ -38,8 +41,11 @@ for _path in paths
     path = _path
     obj = eval path
     if typeof(obj) is 'function'
-      obj (err, data) ->
-        data = unless client.opts.verbose then "data.length=#{data.length}" else unless err then "data=#{data}" else data
-        console.log "[+] path=#{path}, err=", err, data
+      try
+        obj (err, data) ->
+          data = unless client.opts.verbose then "data.length=#{data.length}" else unless err then "data=#{data}" else data
+          console.log "[+] path=#{path}, err=", err, data
+      catch e
+        console.log "[-] path=#{path}, err=", e
     else
       console.error "[-] path=#{path} is not a function"
