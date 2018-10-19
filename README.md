@@ -1,6 +1,8 @@
 Epitech Intranet Node.js Wrapper
 ================================
 
+[![GuardRails badge](https://badges.production.guardrails.io/moul/node-epitech-intranet.svg)](https://www.guardrails.io)
+
 This module implements the new Epitech intranet API using json calls.
 
 Install
